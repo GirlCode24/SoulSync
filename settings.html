@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoulSync – Settings</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="logo">🌿SoulSync💖</div>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">🌞 Mood</a></li>
+        <li><a href="bragbook.html">✍️ Brag Book</a></li>
+        <li><a href="archive.html">📚 Soul Archive</a></li>
+        <li><a href="progress.html">📈 Progress</a></li>
+        <li><a href="settings.html">⚙️ Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Header -->
+    <section id="settings-header">
+      <h1>Settings</h1>
+      <p>Make SoulSync feel more like you.</p>
+    </section>
+
+    <!-- Name -->
+    <section class="settings-section">
+      <h2>Edit Your Name</h2>
+      <input type="text" id="name-edit" placeholder="Enter your name" />
+      <button>Save Name</button>
+    </section>
+
+    <!-- Avatar -->
+    <section class="settings-section" id="avatar-settings">
+      <h2>Choose Avatar</h2>
+      <div id="preset-avatars" class="avatar-grid">
+        <img src="assets/avatar1.png" alt="Avatar 1" class="avatar-option" />
+        <img src="assets/avatar2.png" alt="Avatar 2" class="avatar-option" />
+        <img src="assets/avatar3.png" alt="Avatar 3" class="avatar-option" />
+        <img src="assets/avatar4.png" alt="Avatar 4" class="avatar-option" />
+      </div>
+
+      <p>Or upload your own:</p>
+      <input type="file" id="avatar-upload" accept="image/*" />
+
+      <div id="avatar-preview">
+        <img src="assets/default-avatar.png" alt="Preview" id="preview-img" />
+      </div>
+    </section>
+
+    <!-- Daily Reminder -->
+    <section class="settings-section">
+      <h2>Daily Check-in Reminder</h2>
+      <label><input type="checkbox" id="daily-reminder" /> Enable Daily Reminder</label><br />
+      <label for="reminder-time">Reminder Time:</label>
+      <input type="time" id="reminder-time" />
+    </section>
+
+    <!-- Kindness Challenge -->
+    <section class="settings-section">
+      <h2>Monthly Kindness Challenge</h2>
+      <label><input type="checkbox" id="kindness-challenge" /> Join Challenge</label>
+    </section>
+
+    <!-- Brag Book Frequency -->
+    <section class="settings-section">
+      <h2>Brag Book Frequency</h2>
+      <select id="brag-frequency">
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+      </select>
+    </section>
+
+    <!-- Theme -->
+    <section class="settings-section">
+      <h2>Theme</h2>
+      <select id="theme-select">
+        <option value="light">🌞 Light</option>
+        <option value="dark">🌚 Dark</option>
+        <option value="calm">🌸 Calm</option>
+      </select>
+    </section>
+
+    <!-- Danger Zone -->
+    <section class="settings-section">
+      <h2>Danger Zone</h2>
+      <button id="clear-data" class="danger">🗑 Clear All Data</button>
+    </section>
+
+    <!-- About / Credits -->
+    <section class="settings-section" id="about-section">
+      <h2>About SoulSync</h2>
+      <p>SoulSync is your gentle companion for emotional tracking, reflection, and growth — built with intention,
+        self-love, and care.</p>
+      <p>Designed by Janet Q. & developed with care ✨</p>
+      <p>© 2025 SoulSync. All rights reserved.</p>
+    </section>
+
+    <!-- Save Settings -->
+    <section class="settings-section">
+      <button id="save-settings">Save Settings</button>
+    </section>
+
+  </main>
+</body>
+
+</html>

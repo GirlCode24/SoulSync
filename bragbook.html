@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoulSync – Brag Book</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">🌿SoulSync💖</div>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">🌞 Mood</a></li>
+                <li><a href="bragbook.html">✍️ Brag Book</a></li>
+                <li><a href="archive.html">📚 Soul Archive</a></li>
+                <li><a href="progress.html">📈 Progress</a></li>
+                <li><a href="settings.html">⚙️ Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Brag Book Header -->
+        <section id="brag-header">
+            <h1>Your Brag Book</h1>
+            <p>You’ve come so far — write down what you're proud of.</p>
+        </section>
+
+        <!--  Brag Entry Form -->
+        <section id="brag-entry">
+            <form id="brag-form">
+                <label for="brag-text"> 💼What did you work on or accomplish?</label>
+                <textarea id="brag-text" placeholder="Write it down here..."></textarea>
+
+                <label for="brag-text">🧠What you learnt</label>
+                <textarea id="brag-text" placeholder="Write it down here..."></textarea>
+
+                <label for="brag-text">😉A brave Moment</label>
+                <textarea id="brag-text" placeholder="Write it down here..."></textarea>
+
+                <label for="brag-text">💖Self Kindness you showed</label>
+                <textarea id="brag-text" placeholder="Write it down here..."></textarea>
+
+                <label for="brag-image">Optional: Upload a Screenshot</label>
+                <input type="file" id="brag-image" accept="image/*" />
+
+                <label for="brag-link">Optional: Share a Link</label>
+                <input type="url" id="brag-link" placeholder="https://example.com" />
+
+
+                <label for="pride-slider">How proud do you feel?</label>
+                <input type="range" id="pride-slider" min="1" max="5" step="1" />
+
+                <div class="brag-btn-group">
+                    <button type="submit" id="save-brag">Save Entry</button>
+                    <button type="button" id="edit-brag">Edit</button>
+                    <button type="button" id="delete-brag">Delete</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- 🫶 Soul Whisper -->
+        <section id="soul-whisper">
+            <blockquote>"You're making quiet progress — and that's loud enough."</blockquote>
+        </section>
+
+        <!-- Brag History  -->
+        <section id="brag-history">
+            <h2>Past Brags</h2>
+            <div id="brag-entries">
+
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

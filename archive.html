@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoulSync – Soul Archive</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="logo">🌿SoulSync💖</div>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">🌞 Mood</a></li>
+        <li><a href="bragbook.html">✍️ Brag Book</a></li>
+        <li><a href="archive.html">📚 Soul Archive</a></li>
+        <li><a href="progress.html">📈 Progress</a></li>
+        <li><a href="settings.html">⚙️ Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Header -->
+    <section id="archive-header">
+      <h1>📚 Soul Archive</h1>
+      <p>Your past reflections, moods, and wins — organized and saved just for you.</p>
+    </section>
+
+    <!-- Filter Controls -->
+    <section id="archive-filters">
+      <label for="archive-filter-type">Filter by Type:</label>
+      <select id="archive-filter-type">
+        <option value="all">All</option>
+        <option value="reflection">Reflections</option>
+        <option value="brag">Brag Book</option>
+      </select>
+
+      <label for="mood-filter">Filter by Mood:</label>
+      <select id="mood-filter">
+        <option value="all">All</option>
+        <option value="happy">😊 Happy</option>
+        <option value="sad">😢 Sad</option>
+        <option value="angry">😠 Angry</option>
+        <option value="tired">😴 Tired</option>
+        <option value="anxious">😰 Anxious</option>
+      </select>
+
+      <label for="sort-filter">Sort by:</label>
+      <select id="sort-filter">
+        <option value="latest">Latest First</option>
+        <option value="oldest">Oldest First</option>
+        <option value="most-proud">Most Proud</option>
+      </select>
+    </section>
+
+    <!-- Entry Log Display -->
+    <section id="archive-entries">
+      <div class="entry-card mood-happy">
+        <h3 class="entry-date">July 9, 2025</h3>
+        <p class="entry-type"><strong>Type:</strong> Reflection</p>
+        <p class="entry-mood"><strong>Mood:</strong> 😊 Happy</p>
+        <p class="entry-reflection"><strong>Reflection:</strong> I took a deep breath and actually felt okay.</p>
+        <p class="entry-kindness"><strong>Kindness:</strong> Yes</p>
+        <p class="entry-pride"><strong>Pride:</strong> 4/5</p>
+        <p class="entry-brag"><strong>Brag Book:</strong> Finished project before deadline!</p>
+      </div>
+
+
+    </section>
+
+  </main>
+</body>
+
+</html>

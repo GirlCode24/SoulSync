@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoulSync – Journal</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">🌿SoulSync💖</div>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">🌞 Mood</a></li>
+                <li><a href="bragbook.html">✍️ Brag Book</a></li>
+                <li><a href="archive.html">📚 Soul Archive</a></li>
+                <li><a href="progress.html">📈 Progress</a></li>
+                <li><a href="settings.html">⚙️ Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Onboarding-->
+        <section class="greeting-block">
+            <div class="greeting-left">
+                <div class="avatar-name">
+                    <img src="assets/default-avatar.png" alt="User Avatar" class="avatar-img" />
+                    <div class="name-quote">
+                        <h1>Hi, Janet 👋</h1>
+                        <p class="quote">“You are showing up – and that’s everything.”</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="greeting-right">
+                <span class="badge" title="Kind Soul">💖</span>
+            </div>
+        </section>
+
+
+        <!-- Mood Selection -->
+        <section id="mood-section">
+            <h2>How are you feeling today?</h2>
+            <div id="mood-options">
+                <button class="mood-btn" aria-label="Happy">
+                    😄
+                    <span class="mood-label">Happy</span>
+                </button>
+                <button class="mood-btn" aria-label="Anxious">
+                    😰
+                    <span class="mood-label">Anxious</span>
+                </button>
+                <button class="mood-btn" aria-label="Tired">
+                    😴
+                    <span class="mood-label">Tired</span>
+                </button>
+                <button class="mood-btn" aria-label="Angry">
+                    😡
+                    <span class="mood-label">Angry</span>
+                </button>
+                <button class="mood-btn" aria-label="Sad">
+                    😔
+                    <span class="mood-label">Sad</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Energy & Stress Sliders -->
+        <section id="wellness-section">
+            <h2>Track Your Energy & Stress</h2>
+            <label for="energy-range">Energy Level</label>
+            <input type="range" id="energy-range" min="0" max="10" step="1" />
+
+            <label for="stress-range">Stress Level</label>
+            <input type="range" id="stress-range" min="0" max="10" step="1" />
+        </section>
+
+        <!-- Reflection -->
+        <section id="reflection-section">
+            <h2>Need to let something out?</h2>
+            <p id="reflection-whisper">Write like no one’s judging 🌿</p>
+
+            <div class="reflection-container">
+                <div class="reflection-top-bar">
+                    <span id="mood-emoji">🫶</span>
+                    <div class="char-progress">
+                        <div id="char-progress-fill"></div>
+                    </div>
+                </div>
+
+                <textarea id="reflection-input" placeholder="Speak your truth here..." maxlength="500"></textarea>
+            </div>
+
+            <div class="button-group">
+                <button id="save-reflection">💾 Save</button>
+                <button id="edit-reflection">✏️ Edit</button>
+                <button id="delete-reflection">🗑️ Delete</button>
+            </div>
+        </section>
+
+
+        <!-- Kindness Toggle -->
+        <section id="kindness-section">
+            <label class="toggle-inline">
+                Did you do something kind today?
+                <input type="checkbox" id="kindness-toggle" />
+                <span class="slider"></span>
+            </label>
+            <p id="kindness-feedback" style="display:none;">Yay! You were kind today 💖</p>
+
+        </section>
+
+        <!-- Soul Tip -->
+        <section id="tip-section">
+            <h2>Your Soul Tip</h2>
+            <p id="soul-tip">We’ll suggest something gentle based on your mood...</p>
+        </section>
+
+        <!-- Summary -->
+        <section id="summary-section">
+            <h2>Today’s Summary</h2>
+            <div id="summary-box">
+
+            </div>
+        </section>
+
+
+        <!--  Wellness Resources -->
+        <section id="resources-section">
+            <h2>Need Support?</h2>
+            <ul>
+                <li><a href="https://www.headspace.com/" target="_blank">Headspace</a></li>
+                <li><a href="https://www.calm.com/" target="_blank">Calm</a></li>
+                <li><a href="https://www.meditationoasis.com/" target="_blank">Meditation Oasis</a></li>
+                <li><a href="https://www.smilingmind.com.au/" target="_blank">Smiling Mind</a></li>
+            </ul>
+        </section>
+
+
+    </main>
+</body>
+
+</html>

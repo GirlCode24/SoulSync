@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoulSync – Progress</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">🌿SoulSync💖</div>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">🌞 Mood</a></li>
+                <li><a href="bragbook.html">✍️ Brag Book</a></li>
+                <li><a href="archive.html">📚 Soul Archive</a></li>
+                <li><a href="progress.html">📈 Progress</a></li>
+                <li><a href="settings.html">⚙️ Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Header -->
+        <section id="progress-header">
+            <h1>Your Growth Garden</h1>
+            <p>This is your journey — see how far you've come.</p>
+        </section>
+
+        <!-- 🔍 Progress Filters -->
+        <section id="progress-filters">
+            <h2>Filter Progress</h2>
+
+            <label for="progress-time">By Time:</label>
+            <select id="progress-time">
+                <option value="all">All Time</option>
+                <option value="today">Today</option>
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+            </select>
+
+            <label for="progress-type">By Type:</label>
+            <select id="progress-type">
+                <option value="all">All</option>
+                <option value="kindness">Kindness Points</option>
+                <option value="streak">Streak</option>
+                <option value="badges">Badges</option>
+            </select>
+        </section>
+
+        <!-- Kindness Points -->
+        <section class="progress-metric">
+            <h2>Kindness Points</h2>
+            <div id="kindness-points">
+                <span class="points">🌟 0</span>
+            </div>
+        </section>
+
+        <!-- Streak Tracker -->
+        <section class="progress-metric">
+            <h2>Streak</h2>
+            <div id="streak-count">
+                <span class="streak">🔥 0 Days</span>
+            </div>
+        </section>
+
+        <section id="progress-charts">
+            <h2>Visual Overview</h2>
+
+            <!-- Kindness Points -->
+            <div class="chart-block">
+                <h3>Kindness Points Over Time</h3>
+                <canvas id="kindnessChart"></canvas>
+            </div>
+
+            <!-- Streak Progress -->
+            <div class="chart-block">
+                <h3>Streak Tracker</h3>
+                <canvas id="streakChart"></canvas>
+            </div>
+
+            <!-- Reflection Frequency -->
+            <div class="chart-block">
+                <h3>Reflection Entries</h3>
+                <canvas id="reflectionChart"></canvas>
+            </div>
+
+            <!-- Brag Book Entries -->
+            <div class="chart-block">
+                <h3>Brag Book Entries</h3>
+                <canvas id="bragChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Growth Tree -->
+        <section id="growth-tree">
+            <h2>Your Tree</h2>
+            <div class="tree-container">
+                <img src="assets/tree-level-1.png" alt="Growth Tree" id="tree-image" />
+                <p id="tree-label">Seedling 🌱</p>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section id="achievements">
+            <h2>Badges & Titles</h2>
+            <div class="badge-grid">
+
+                <div class="badge-card">
+                    <img src="assets/badge-starter.png" alt="Starter Badge" />
+                    <p>Beginner Bloom</p>
+                </div>
+
+                <div class="badge-card locked">
+                    <img src="assets/badge-locked.png" alt="Locked Badge" />
+                    <p>Locked</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="achievements">
+            <h2>Achievements Unlocked</h2>
+            <div class="badge-container">
+                <div class="badge">🌟 Brave Heart</div>
+                <div class="badge">💖 Kind Soul</div>
+                <div class="badge">📅 7-Day Streak</div>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
