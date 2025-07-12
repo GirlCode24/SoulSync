@@ -18,7 +18,7 @@ const prideLevels = {
   5: "🎉 Super proud!"
 };
 
-// --- Preview Slider Emoji ---
+
 const prideDisplay = document.createElement("p");
 fields.pride.after(prideDisplay);
 prideDisplay.textContent = prideLevels[fields.pride.value];
@@ -27,7 +27,7 @@ fields.pride.addEventListener("input", () => {
   prideDisplay.textContent = prideLevels[fields.pride.value];
 });
 
-// --- Preview Image ---
+// Preview Image
 const imagePreview = document.createElement("img");
 imagePreview.id = "image-preview";
 imagePreview.style.display = "none";
@@ -51,7 +51,7 @@ fields.image.addEventListener("change", () => {
   }
 });
 
-// --- Save Entry ---
+// Save Entry 
 bragForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -78,7 +78,7 @@ bragForm.addEventListener("submit", function (e) {
   displayTodaysBrags();
 });
 
-// --- Display Today's Brags (max 2) ---
+// Display Today's Brags (max 2) 
 function displayTodaysBrags() {
   const container = document.getElementById("brag-entries");
   const brags = JSON.parse(localStorage.getItem("bragBookEntries")) || [];
@@ -123,7 +123,7 @@ function displayTodaysBrags() {
   attachEditListeners();
 }
 
-// --- Delete ---
+// Delete
 function attachDeleteListeners() {
   document.querySelectorAll(".entry-btn.delete").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -138,7 +138,7 @@ function attachDeleteListeners() {
   });
 }
 
-// --- Edit ---
+// Edit 
 function attachEditListeners() {
   document.querySelectorAll(".entry-btn.edit").forEach(btn => {
     btn.addEventListener("click", () => {
