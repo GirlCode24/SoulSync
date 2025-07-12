@@ -37,17 +37,18 @@
         <!--  Brag Entry Form -->
         <section id="brag-entry">
             <form id="brag-form">
-                <label for="brag-text"> 💼What did you work on or accomplish?</label>
-                <textarea id="brag-text" placeholder="Write it down here..."></textarea>
+                <label for="brag-accomplishment">💼 What did you work on or accomplish?</label>
+                <textarea id="brag-accomplishment" placeholder="Write it down here..."></textarea>
 
-                <label for="brag-text">🧠What you learnt</label>
-                <textarea id="brag-text" placeholder="Write it down here..."></textarea>
+                <label for="brag-learning">🧠 What you learnt</label>
+                <textarea id="brag-learning" placeholder="Write it down here..."></textarea>
 
-                <label for="brag-text">😉A brave Moment</label>
-                <textarea id="brag-text" placeholder="Write it down here..."></textarea>
+                <label for="brag-brave">😉 A brave moment</label>
+                <textarea id="brag-brave" placeholder="Write it down here..."></textarea>
 
-                <label for="brag-text">💖Self Kindness you showed</label>
-                <textarea id="brag-text" placeholder="Write it down here..."></textarea>
+                <label for="brag-kindness">💖 Self-kindness you showed</label>
+                <textarea id="brag-kindness" placeholder="Write it down here..."></textarea>
+
 
                 <label for="brag-image">Optional: Upload a Screenshot</label>
                 <input type="file" id="brag-image" accept="image/*" />
@@ -57,13 +58,14 @@
 
 
                 <label for="pride-slider">How proud do you feel?</label>
-                <input type="range" id="pride-slider" min="1" max="5" step="1" value="0"/>
+                <input type="range" id="pride-slider" min="1" max="5" step="1" value="0" />
+                <div id="pride-level-display"></div>
+
 
                 <div class="brag-btn-group">
                     <button type="submit" id="save-brag">Save Entry</button>
-                    <button type="button" id="edit-brag">Edit</button>
-                    <button type="button" id="delete-brag">Delete</button>
                 </div>
+
 
             </form>
         </section>
@@ -75,13 +77,13 @@
 
         <!-- Brag History  -->
         <section id="brag-history">
-            <h2>Past Brags</h2>
-            <div id="brag-entries">
-
-            </div>
+            <h2>Today's Brags <small><a href="archive.html" style="font-size: 0.9rem;">(See All)</a></small></h2>
+            <div id="brag-entries"></div>
         </section>
 
+
     </main>
+    <script src="/Scripts/bragbook.js"></script>
 </body>
 
 </html>

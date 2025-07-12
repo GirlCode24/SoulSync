@@ -523,13 +523,21 @@ input[type="range"]::-webkit-slider-thumb:hover {
   content: "💫 ";
   font-size: 1.2rem;
 }
+
 #soul-tip {
   animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -635,6 +643,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   margin-top: 0.5rem;
 }
 
+/* Brag Entry Form */
 #brag-entry {
   background-color: #f9f7ff;
   padding: 2rem;
@@ -674,6 +683,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   accent-color: #7e5bef;
 }
 
+/* Save Button */
 #brag-entry button[type="submit"] {
   padding: 0.9rem 1.2rem;
   font-size: 1rem;
@@ -684,10 +694,81 @@ input[type="range"]::-webkit-slider-thumb:hover {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 #brag-entry button[type="submit"]:hover {
   background-color: #6a4ddf;
+}
+
+/* Displayed Entries */
+#brag-entries {
+  margin-top: 2rem;
+}
+
+#brag-entries p {
+  font-style: italic;
+  color: #555;
+  margin-top: 1rem;
+}
+
+/* Each Brag Entry Block */
+.brag-entry {
+  background-color: #ffffff;
+  border: 1px solid #e0d7ff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Edit/Delete Buttons inside Entries */
+.brag-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: flex-end;
+}
+
+.entry-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Edit Button Style */
+.edit-brag {
+  background-color: #e5f5ff;
+  color: #1c6ca6;
+}
+
+.edit-brag:hover {
+  background-color: #d0ebff;
+  transform: scale(1.05);
+}
+
+/* Delete Button Style */
+.delete-brag {
+  background-color: #ffe5e5;
+  color: #c0392b;
+}
+
+.delete-brag:hover {
+  background-color: #ffcfcf;
+  transform: scale(1.05);
+}
+
+/* See more link */
+#brag-entries a {
+  color: #7e5bef;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 #soul-whisper {
@@ -705,72 +786,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
   content: "✨ ";
   font-size: 1.2rem;
 }
-
-#brag-history {
-  margin-top: 2rem;
-}
-
-#brag-history h2 {
-  font-size: 1.4rem;
-  color: #4b3f72;
-  margin-bottom: 1rem;
-}
-
-#brag-entries {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background-color: #f2f0fa;
-  padding: 1.2rem;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.brag-btn-group {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.brag-btn-group button {
-  flex: 1;
-  padding: 0.8rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-#save-brag {
-  background-color: #7e5bef;
-  color: #fff;
-}
-
-#save-brag:hover {
-  background-color: #6843d2;
-}
-
-#edit-brag {
-  background-color: #fef3c7;
-  color: #b45309;
-}
-
-#edit-brag:hover {
-  background-color: #fde68a;
-}
-
-#delete-brag {
-  background-color: #fee2e2;
-  color: #b91c1c;
-}
-
-#delete-brag:hover {
-  background-color: #fecaca;
-}
-
 
 /* PROGRESS PAGE */
 #progress-header {
