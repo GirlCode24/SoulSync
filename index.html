@@ -7,8 +7,6 @@
     <title>SoulSync – Journal</title>
     <link rel="stylesheet" href="/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
 
 </head>
 
@@ -77,14 +75,16 @@
         </section>
 
         <!-- Energy & Stress Sliders -->
-        <section id="wellness-section">
-            <h2>Track Your Energy & Stress</h2>
-            <label for="energy-range">Energy Level</label>
-            <input type="range" id="energy-range" min="0" max="10" step="1" />
+        <label for="energy-range">Energy Level:
+            <span id="energy-value">0</span> 
+        </label>
+        <input type="range" id="energy-range" min="0" max="10" step="1" value="0"/>
 
-            <label for="stress-range">Stress Level</label>
-            <input type="range" id="stress-range" min="0" max="10" step="1" />
-        </section>
+        <label for="stress-range">Stress Level:
+            <span id="stress-value">0</span> 
+        </label>
+        <input type="range" id="stress-range" min="0" max="10" step="1" value="0"/>
+
 
         <!-- Reflection -->
         <section id="reflection-section">
@@ -125,6 +125,7 @@
         <section id="tip-section">
             <h2>Your Soul Tip</h2>
             <p id="soul-tip">We’ll suggest something gentle based on your mood...</p>
+
         </section>
 
         <!-- Summary -->
@@ -149,6 +150,9 @@
 
 
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="/Scripts/mood.js"></script>
 </body>
 
 </html>
