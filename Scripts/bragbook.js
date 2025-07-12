@@ -18,7 +18,7 @@ const prideLevels = {
   5: "🎉 Super proud!"
 };
 
-// Add pride label below slider
+// --- Preview Slider Emoji ---
 const prideDisplay = document.createElement("p");
 fields.pride.after(prideDisplay);
 prideDisplay.textContent = prideLevels[fields.pride.value];
@@ -27,7 +27,31 @@ fields.pride.addEventListener("input", () => {
   prideDisplay.textContent = prideLevels[fields.pride.value];
 });
 
-// Save brag entry
+// --- Preview Image ---
+const imagePreview = document.createElement("img");
+imagePreview.id = "image-preview";
+imagePreview.style.display = "none";
+imagePreview.style.maxWidth = "100%";
+imagePreview.style.borderRadius = "10px";
+imagePreview.style.marginTop = "1rem";
+fields.image.after(imagePreview);
+
+fields.image.addEventListener("change", () => {
+  const file = fields.image.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      imagePreview.src = e.target.result;
+      imagePreview.style.display = "block";
+    };
+    reader.readAsDataURL(file);
+  } else {
+    imagePreview.src = "";
+    imagePreview.style.display = "none";
+  }
+});
+
+// --- Save Entry ---
 bragForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -39,22 +63,22 @@ bragForm.addEventListener("submit", function (e) {
     braveMoment: fields.braveMoment.value.trim(),
     selfKindness: fields.selfKindness.value.trim(),
     link: fields.link.value.trim(),
-    pride: parseInt(fields.pride.value)
+    pride: parseInt(fields.pride.value),
+    image: imagePreview.src || ""
   };
 
   let brags = JSON.parse(localStorage.getItem("bragBookEntries")) || [];
+
   brags.push(newEntry);
   localStorage.setItem("bragBookEntries", JSON.stringify(brags));
 
   alert("✨ Brag saved!");
   bragForm.reset();
-  prideDisplay.textContent = prideLevels[3];
-  fields.pride.value = 3;
-
+  imagePreview.style.display = "none";
   displayTodaysBrags();
 });
 
-// Display only up to 2 brags for today
+// --- Display Today's Brags (max 2) ---
 function displayTodaysBrags() {
   const container = document.getElementById("brag-entries");
   const brags = JSON.parse(localStorage.getItem("bragBookEntries")) || [];
@@ -71,45 +95,52 @@ function displayTodaysBrags() {
     return;
   }
 
-  // Show only 2 most recent entries
-  const recentBrags = todaysBrags.slice(-2).reverse();
+  const maxDisplay = 2;
+  const visibleBrags = todaysBrags.slice(-maxDisplay).reverse();
 
-  recentBrags.forEach(entry => {
+  visibleBrags.forEach(entry => {
     const entryDiv = document.createElement("div");
     entryDiv.classList.add("brag-entry");
 
-   entryDiv.innerHTML = `
-  <p><strong>🎯 Accomplishment:</strong> ${entry.accomplishment}</p>
-  <p><strong>🧠 Learned:</strong> ${entry.learning}</p>
-  <p><strong>💪 Brave Moment:</strong> ${entry.braveMoment}</p>
-  <p><strong>💖 Self-Kindness:</strong> ${entry.selfKindness}</p>
-  <p><strong>🌟 Pride:</strong> ${prideLevels[entry.pride]}</p>
-  <p><strong>🔗 Link:</strong> <a href="${entry.link}" target="_blank">${entry.link}</a></p>
-  <div class="brag-actions">
-    <button class="entry-btn edit-brag" data-index="${entry.index}">✏️ Edit</button>
-    <button class="entry-btn delete-brag" data-index="${entry.index}">🗑️ Delete</button>
-  </div>
-`;
-
+    entryDiv.innerHTML = `
+      <p><strong>🎯 Accomplishment:</strong> ${entry.accomplishment}</p>
+      <p><strong>🧠 Learned:</strong> ${entry.learning}</p>
+      <p><strong>💪 Brave Moment:</strong> ${entry.braveMoment}</p>
+      <p><strong>💖 Self-Kindness:</strong> ${entry.selfKindness}</p>
+      <p><strong>🌟 Pride:</strong> ${prideLevels[entry.pride]}</p>
+      ${entry.link ? `<p><strong>🔗 Link:</strong> <a href="${entry.link}" target="_blank">${entry.link}</a></p>` : ""}
+      ${entry.image ? `<img src="${entry.image}" alt="Brag Image" class="brag-img" />` : ""}
+      <div class="brag-actions">
+        <button class="entry-btn edit" data-index="${entry.index}">✏️ Edit</button>
+        <button class="entry-btn delete" data-index="${entry.index}">🗑️ Delete</button>
+      </div>
+    `;
 
     container.appendChild(entryDiv);
   });
 
-  if (todaysBrags.length > 2) {
-    const seeMore = document.createElement("p");
-    seeMore.innerHTML = `+ ${todaysBrags.length - 2} more in <a href="archive.html">Soul Archive</a>`;
-    seeMore.style.textAlign = "center";
-    seeMore.style.marginTop = "1rem";
-    container.appendChild(seeMore);
-  }
-
-  attachEditListeners();
   attachDeleteListeners();
+  attachEditListeners();
 }
 
-// Edit brag entry
+// --- Delete ---
+function attachDeleteListeners() {
+  document.querySelectorAll(".entry-btn.delete").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to delete this brag?")) {
+        const index = parseInt(btn.dataset.index);
+        const brags = JSON.parse(localStorage.getItem("bragBookEntries")) || [];
+        brags.splice(index, 1);
+        localStorage.setItem("bragBookEntries", JSON.stringify(brags));
+        displayTodaysBrags();
+      }
+    });
+  });
+}
+
+// --- Edit ---
 function attachEditListeners() {
-  document.querySelectorAll(".edit-brag").forEach(btn => {
+  document.querySelectorAll(".entry-btn.edit").forEach(btn => {
     btn.addEventListener("click", () => {
       const index = parseInt(btn.dataset.index);
       const brags = JSON.parse(localStorage.getItem("bragBookEntries")) || [];
@@ -122,26 +153,13 @@ function attachEditListeners() {
       fields.link.value = entry.link;
       fields.pride.value = entry.pride;
       prideDisplay.textContent = prideLevels[entry.pride];
+      imagePreview.src = entry.image || "";
+      imagePreview.style.display = entry.image ? "block" : "none";
 
-      // Remove and re-save on update
+      // Remove to allow re-save
       brags.splice(index, 1);
       localStorage.setItem("bragBookEntries", JSON.stringify(brags));
       displayTodaysBrags();
-    });
-  });
-}
-
-// Delete brag entry
-function attachDeleteListeners() {
-  document.querySelectorAll(".delete-brag").forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (confirm("Are you sure you want to delete this brag?")) {
-        const index = parseInt(btn.dataset.index);
-        const brags = JSON.parse(localStorage.getItem("bragBookEntries")) || [];
-        brags.splice(index, 1);
-        localStorage.setItem("bragBookEntries", JSON.stringify(brags));
-        displayTodaysBrags();
-      }
     });
   });
 }

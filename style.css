@@ -770,6 +770,13 @@ input[type="range"]::-webkit-slider-thumb:hover {
   font-weight: bold;
   text-decoration: underline;
 }
+.brag-img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
 
 #soul-whisper {
   background-color: #fffdfc;
